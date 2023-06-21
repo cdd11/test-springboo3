@@ -3,7 +3,6 @@ package com.tinghai.testspringboo3.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tinghai.testspringboo3.entity.Student;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 /**

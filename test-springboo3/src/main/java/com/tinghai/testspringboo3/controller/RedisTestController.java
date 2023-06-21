@@ -1,20 +1,10 @@
 package com.tinghai.testspringboo3.controller;
 
-import com.tinghai.testspringboo3.entity.Student;
-import com.tinghai.testspringboo3.service.StudentService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
