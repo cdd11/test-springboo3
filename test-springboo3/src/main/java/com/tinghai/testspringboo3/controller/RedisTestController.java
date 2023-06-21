@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author chendoudou
- * @description
+ * @description redis相关demo
  * @date 2023/6/2 10:51
  **/
 @RestController
@@ -29,6 +29,9 @@ public class RedisTestController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    /**
+     * redis分布式锁
+     */
     public void test() {
         String lockKey = "test";
         String lockValue = UUID.randomUUID().toString().replaceAll("-", "") + Thread.currentThread().getId();
