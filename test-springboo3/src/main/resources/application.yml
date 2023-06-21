@@ -1,0 +1,50 @@
+server:
+  port: 8080
+  application:
+    name: test-srpingboot3
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/abujlb2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 1000 #最大连接数,默认值10.
+      minimum-idle: 200 #最小空闲连接，默认值10.
+      connection-timeout: 10000 #连接超时时间(毫秒),默认值30秒.
+      #空闲连接超时时间，默认值600000(10分钟),只有空闲连接数大于最大连接数且空闲时间超过该值，才会被释放
+      #如果大于等于 max-lifetime 且 max-lifetime>0,则会被重置为0.
+      idle-timeout: 600000
+      max-lifetime: 3000000 #连接最大存活时间,默认值30分钟.设置应该比mysql设置的超时时间短
+      connection-test-query: select 1 #连接测试查询
+    redis:
+      # Redis服务器地址
+      host: 127.0.0.1
+      # Redis服务器端口号
+      port: 6379
+      # 使用的数据库索引，默认是0
+      database: 0
+      # 连接超时时间
+      timeout: 1800000
+      # 设置密码
+      password:
+      lettuce:
+        pool:
+          # 最大阻塞等待时间，负数表示没有限制
+          max-wait: -1
+          # 连接池中的最大空闲连接
+          max-idle: 20
+          # 连接池中的最小空闲连接
+          min-idle: 0
+          # 连接池中最大连接数，负数表示没有限制
+          max-active: 20
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+doc-info:
+  title: SpringBoot3学习项目
+  description: 学习 Spring Boot 3.1.0
+
